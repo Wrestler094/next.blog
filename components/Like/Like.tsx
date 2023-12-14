@@ -19,6 +19,7 @@ export default function Like({numberOfLike, className, ...rest}: Props) {
                 alt="Like"
                 width={16}
                 height={16}
+                priority={false}
             />
         </div>
     );

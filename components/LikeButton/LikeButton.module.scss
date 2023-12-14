@@ -1,0 +1,14 @@
+.wrapper {
+	display: grid;
+	place-items: center center;
+
+	width: 48px;
+	height: 48px;
+
+	border: 1px solid var(--color-dark-charcoal);
+	border-radius: 50%;
+}
+
+.liked {
+	background: var(--color-dark-charcoal);
+}
