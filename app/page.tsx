@@ -1,5 +1,4 @@
 import PostCard from "@/components/PostCard/PostCard";
-import LikeButton from "@/components/LikeButton/LikeButton";
 
 const postCard = {
     id: 1,
@@ -20,7 +19,6 @@ export default function HomePage() {
                 publicationDate={postCard.publicationDate}
                 readEstimation={postCard.readEstimation}
             />
-            <LikeButton postId={1}/>
         </main>
     );
 }
