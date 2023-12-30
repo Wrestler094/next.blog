@@ -3,7 +3,7 @@
 import {HTMLAttributes} from "react";
 import cn from "classnames";
 
-import LikeButton from "@/components/LikeButton/LikeButton";
+import LikeButton from "@/components/LikeBlock/components/LikeButton/LikeButton";
 
 import styles from './LikeBlock.module.scss';
 
