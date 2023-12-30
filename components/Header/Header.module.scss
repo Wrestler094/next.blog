@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  padding: 10px;
+}
+
+.title {
+  color: var(--color-black);
+  font-size: 40px;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.github-link {
+  margin-left: auto;
+}
+
+.github-image {
+  display: block;
+}

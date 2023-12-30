@@ -1,9 +1,11 @@
-import { ReactNode } from "react";
-import { Open_Sans } from 'next/font/google';
+import {ReactNode} from "react";
+import {Open_Sans} from 'next/font/google';
+import Header from "@/components/Header/Header";
+import Container from "@/components/Container/Container";
 
-import type { Metadata } from 'next';
+import type {Metadata} from 'next';
 
-import './globals.scss';
+import './_styles/globals.scss';
 
 const openSans = Open_Sans({
     subsets: ['latin', 'cyrillic'],
@@ -12,20 +14,23 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Next блог',
-  description: 'Блог на Next.js',
+    title: 'Next блог',
+    description: 'Блог на Next.js',
 };
 
 type Props = {
-  children: ReactNode
+    children: ReactNode
 };
 
-export default function RootLayout({ children }: Props) {
-  return (
-    <html lang="ru">
-      <body className={openSans.className}>
-        {children}
-      </body>
-    </html>
-  );
+export default function RootLayout({children}: Props) {
+    return (
+        <html lang="ru">
+            <body className={openSans.className}>
+                <Container>
+                    <Header/>
+                    {children}
+                </Container>
+            </body>
+        </html>
+    );
 }
