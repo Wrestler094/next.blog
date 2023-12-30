@@ -1,4 +1,14 @@
+@import "/app/_styles/mixins.scss";
+
 .container {
-  max-width: 1126px;
+  max-width: 370px;
   margin: 0 auto;
+
+  @media screen and (min-width: $laptop) {
+    max-width: 740px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: 1136px;
+  }
 }

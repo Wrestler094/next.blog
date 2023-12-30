@@ -1,5 +1,7 @@
 import PostCard from "@/components/PostCard/PostCard";
 
+import styles from './page.module.scss';
+
 const postCard = {
     id: 1,
     title: 'Как работать с CSS Grid',
@@ -10,15 +12,20 @@ const postCard = {
 };
 
 export default function HomePage() {
+    const posts = Array.from({ length: 10 }).map((_, index) => (
+        <PostCard
+            key={index}
+            title={postCard.title}
+            introText={postCard.body}
+            category={postCard.category}
+            publicationDate={postCard.publicationDate}
+            readEstimation={postCard.readEstimation}
+        />
+    ));
+
     return (
-        <main>
-            <PostCard
-                title={postCard.title}
-                introText={postCard.body}
-                category={postCard.category}
-                publicationDate={postCard.publicationDate}
-                readEstimation={postCard.readEstimation}
-            />
+        <main className={styles.grid}>
+            {posts}
         </main>
     );
 }
