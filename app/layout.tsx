@@ -5,7 +5,7 @@ import Container from "@/components/Container/Container";
 
 import type {Metadata} from 'next';
 
-import './_styles/globals.scss';
+import '@/styles/globals.scss';
 
 const openSans = Open_Sans({
     subsets: ['latin', 'cyrillic'],
