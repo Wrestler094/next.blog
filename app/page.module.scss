@@ -1,0 +1,19 @@
+@import "/styles/mixins.scss";
+
+.grid {
+  display: grid;
+  justify-content: center;
+  grid-gap: 20px;
+  padding: 10px;
+
+  @media screen and (min-width: $laptop) {
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 20px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 33px;
+    padding-bottom: 30px;
+  }
+}

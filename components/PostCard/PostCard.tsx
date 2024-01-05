@@ -13,20 +13,24 @@ import postCard from '../../public/images/post-image.png';
 import styles from './PostCard.module.scss';
 
 type Props = {
+    postId: number;
     title: string;
     introText: string;
     category: string;
     publicationDate: string;
     readEstimation: string;
+    numberOfLikes: number;
     className?: string;
 } & HTMLAttributes<HTMLDivElement>;
 
 export default function PostCard({
+    postId,
     title,
     introText,
     category,
     publicationDate,
     readEstimation,
+    numberOfLikes,
     className,
 }: Props) {
     return (
@@ -43,7 +47,7 @@ export default function PostCard({
 
             <div className={styles['top-content']}>
                 <Tag>{category}</Tag> · <Tag isLight={true}>{publicationDate}</Tag>
-                <Like numberOfLike={5}/>
+                <Like numberOfLikes={numberOfLikes}/>
             </div>
 
             <Heading tag="h3">{title}</Heading>
@@ -51,7 +55,7 @@ export default function PostCard({
 
             <div className={styles['bottom-content']}>
                 <Tag isLight={true}>{readEstimation}</Tag>
-                <Anchor icon="arrow-right" href="#">Читать</Anchor>
+                <Anchor icon="arrow-right" href={`/posts/${postId}`}>Читать</Anchor>
             </div>
         </div>
     );
