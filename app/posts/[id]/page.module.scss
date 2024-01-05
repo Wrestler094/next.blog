@@ -1,0 +1,24 @@
+.wrapper {
+  padding: 25px 10px;
+}
+
+.title {
+  color: var(--color-charleston-green);
+  font-size: 34px;
+  line-height: normal;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.post-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.image {
+  display: block;
+  max-height: 500px;
+  margin: 0 auto 10px auto;
+}
