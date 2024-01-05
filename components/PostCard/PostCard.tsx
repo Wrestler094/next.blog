@@ -13,6 +13,7 @@ import postCard from '../../public/images/post-image.png';
 import styles from './PostCard.module.scss';
 
 type Props = {
+    postId: number;
     title: string;
     introText: string;
     category: string;
@@ -23,6 +24,7 @@ type Props = {
 } & HTMLAttributes<HTMLDivElement>;
 
 export default function PostCard({
+    postId,
     title,
     introText,
     category,
@@ -53,7 +55,7 @@ export default function PostCard({
 
             <div className={styles['bottom-content']}>
                 <Tag isLight={true}>{readEstimation}</Tag>
-                <Anchor icon="arrow-right" href="#">Читать</Anchor>
+                <Anchor icon="arrow-right" href={`/posts/${postId}`}>Читать</Anchor>
             </div>
         </div>
     );

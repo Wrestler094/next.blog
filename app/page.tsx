@@ -18,6 +18,7 @@ export default async function HomePage() {
                 .map(post => (
                     <PostCard
                         key={post.id}
+                        postId={post.id}
                         title={capitalizeFirstLetter(post.title)}
                         introText={capitalizeFirstLetter(post.body)}
                         category={getFakeCategory()}
