@@ -1,24 +1,15 @@
 .wrapper {
-  padding: 25px 10px;
+	padding: 25px 10px;
 }
 
-.title {
-  color: var(--color-charleston-green);
-  font-size: 34px;
-  line-height: normal;
-  font-weight: 700;
-  margin-bottom: 10px;
+.blog-post {
+	margin-bottom: 25px;
 }
 
-.post-info {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin-bottom: 10px;
+.like-block {
+	margin-bottom: 35px;
 }
 
-.image {
-  display: block;
-  max-height: 500px;
-  margin: 0 auto 10px auto;
+.comments {
+	margin-bottom: 20px;
 }

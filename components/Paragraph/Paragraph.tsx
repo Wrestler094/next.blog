@@ -13,11 +13,12 @@ export default function Paragraph({
     isBold = false,
     className,
     children,
+    ...props
 }: PropsWithChildren<Props>) {
     return (
         <p className={cn(styles[size], {
             [styles.bold]: isBold,
-        }, className)}>
+        }, className)} {...props}>
             {children}
         </p>
     );

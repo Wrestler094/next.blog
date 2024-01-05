@@ -34,7 +34,7 @@ export default function PostCard({
     className,
 }: Props) {
     return (
-        <div className={cn(styles['wrapper'], className)}>
+        <article className={cn(styles['wrapper'], className)}>
             <div className={styles['post-image-wrapper']}>
                 <Image
                     src={postCard}
@@ -45,18 +45,18 @@ export default function PostCard({
                 />
             </div>
 
-            <div className={styles['top-content']}>
+            <header className={styles['top-content']}>
                 <Tag>{category}</Tag> · <Tag isLight={true}>{publicationDate}</Tag>
                 <Like numberOfLikes={numberOfLikes}/>
-            </div>
+            </header>
 
             <Heading tag="h3">{title}</Heading>
             <Paragraph className={styles['intro-text']} size="s">{introText}</Paragraph>
 
-            <div className={styles['bottom-content']}>
+            <footer className={styles['bottom-content']}>
                 <Tag isLight={true}>{readEstimation}</Tag>
                 <Anchor icon="arrow-right" href={`/posts/${postId}`}>Читать</Anchor>
-            </div>
-        </div>
+            </footer>
+        </article>
     );
 }

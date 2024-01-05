@@ -7,7 +7,7 @@ import likeImg from "@/public/images/like.svg";
 import styles from './LikeButton.module.scss';
 
 type Props = {
-    handleClick: () => Promise<Response>;
+    handleClick: () => void;
 } & HTMLAttributes<HTMLButtonElement>;
 
 export default function LikeButton({handleClick, ...rest}: Props) {
