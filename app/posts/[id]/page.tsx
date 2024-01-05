@@ -1,18 +1,42 @@
+import {Metadata} from "next";
 import LikeBlock from "@/components/LikeBlock/LikeBlock";
+import {getPost, getPosts} from "@/api/jsonplaceholder";
 
-const postCard = {
-    id: 1,
-    title: 'Как работать с CSS Grid',
-    body: 'Грид-раскладка (CSS Grid Layout) представляет собой двумерную систему сеток в CSS. Гриды подойдут и для верстки основных областей страницы..',
-    category: 'Front-end',
-    publicationDate: '1 месяц назад',
-    readEstimation: '3 минуты',
+import {capitalizeFirstLetter} from "@/helpers/capitalizeFirstLetter";
+
+type Params = {
+    params: {
+        id: string
+    }
 };
 
-export default function PostsPage() {
+export async function generateMetadata({params}: Params): Promise<Metadata | undefined> {
+    const post = await getPost(params.id);
+
+    if (post && post.title) {
+        return {
+            title: capitalizeFirstLetter(post.title),
+        };
+    }
+}
+
+export async function generateStaticParams() {
+    const posts = await getPosts();
+
+    return posts.slice(0, 9).map(post => ({
+        id: String(post.id)
+    }));
+}
+
+export default async function PostsPage({params}: Params) {
+    const post = await getPost(params.id);
+
     return (
         <main>
-            <LikeBlock postId={postCard.id} />
+            <p>
+                {JSON.stringify(post)}
+            </p>
+            <LikeBlock postId={post.id}/>
         </main>
     );
 }

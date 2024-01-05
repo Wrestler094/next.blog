@@ -18,6 +18,7 @@ type Props = {
     category: string;
     publicationDate: string;
     readEstimation: string;
+    numberOfLikes: number;
     className?: string;
 } & HTMLAttributes<HTMLDivElement>;
 
@@ -27,6 +28,7 @@ export default function PostCard({
     category,
     publicationDate,
     readEstimation,
+    numberOfLikes,
     className,
 }: Props) {
     return (
@@ -43,7 +45,7 @@ export default function PostCard({
 
             <div className={styles['top-content']}>
                 <Tag>{category}</Tag> · <Tag isLight={true}>{publicationDate}</Tag>
-                <Like numberOfLike={5}/>
+                <Like numberOfLikes={numberOfLikes}/>
             </div>
 
             <Heading tag="h3">{title}</Heading>
